@@ -122,6 +122,7 @@ Gerou alguns arquivos .lock, sem esse arquivo outro desenvolvedor consegue insta
     "prettier/prettier": "error"
   }
 }
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Criando e configurando o arquivo .gitignore
 
