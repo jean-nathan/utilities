@@ -130,6 +130,13 @@ Gerou alguns arquivos .lock, sem esse arquivo outro desenvolvedor consegue insta
 --------------------------------------------------------------------
 Crie um repositorio no git e acesse ele pelo VSCode, neste repositorio voce deve criar um arquivo .gitignore
 
+## Modelo para uso:
+
+node_modules/
+.env
+dist
+.DS_Store
+
 --------------------------------------------------------------------
 Criando um Servidor Express:
 
