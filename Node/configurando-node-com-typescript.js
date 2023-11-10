@@ -24,6 +24,19 @@ Entao por exemplo o encerrar da linha, ele é diferente pra cada sistema op, mas
 
 Voce pode instalar a extensao (plugin) EditorConfig para gerar um arquivo e modifica-lo ao seu favor.
 
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 2 ## quant de tabs
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = false
+
 --------------------------------------------------------------------
 Configurando o TypeScript:
 
