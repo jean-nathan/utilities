@@ -29,6 +29,8 @@ Voce pode instalar a extensao (plugin) EditorConfig para gerar um arquivo e modi
 # top-most EditorConfig file
 root = true
 
+## Modelo para uso:
+
 [*]
 indent_style = space
 indent_size = 2 ## quant de tabs
@@ -53,6 +55,8 @@ Após executado o comando para instalacao, devemos configura-lo:
 execute o comando: yarn tsc --init
 
 Vai gerar o arquivo tsconfig.json e voce pode apagar trechos comentados e deverá deixar configurado da seguinte forma:
+
+## Modelo para uso:
 
 {
   "compilerOptions": {
@@ -106,6 +110,23 @@ Yarn
 
 Gerou alguns arquivos .lock, sem esse arquivo outro desenvolvedor consegue instalar outras versões das libs que estão no seu projeto, entao ele bloqueia.
 
+## Modelo para uso:
+
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["standard", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
 --------------------------------------------------------------------
 Crie um repositorio no git e acesse ele pelo VSCode, neste repositorio voce deve criar um arquivo .gitignore
 
