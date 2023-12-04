@@ -6,7 +6,7 @@ Um ORM é como um tradutor que ajuda o computador a entender e falar com um banc
 
 Ele faz com que as informações no código (como objetos) possam ser armazenadas e recuperadas de um jeito que o banco de dados entenda, sem a gente ter que lidar diretamente com o "idioma" do banco de dados.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 PRINCIPAIS BENEFÍCIOS DE USAR O PRISMA:
 
 * Produtividade Elevada: Facilita interações com o banco de dados, permitindo mais foco na lógica da aplicação.
@@ -23,19 +23,19 @@ PRINCIPAIS BENEFÍCIOS DE USAR O PRISMA:
 * Mapeamento de banco já existente: O Prisma pode automaticamente criar modelos de dados a partir de um banco de dados existente, facilitando a transição para o uso do Prisma em bancos já em operação.
 
 Site do Prisma: https://www.prisma.io/
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 REQUISITOS PARA CRIAR UM BANCO COM PRISMA:
 
 Você ja precisa ter uma aplicação em Node com Express configurada rodando.
 Passo a passo para criar uma aplicação Node com Express:  https://github.com/jean-nathan/utilities/blob/main/Node/configurando-node-com-typescript-express.js
 Instale os plugins no VSCode: Prisma e o Prisma Insider
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 ADICIONANDO O PRISMA NA APLICAÇÃO NODE:
 
 Execute o comando: yarn add prisma -D 
 O que faz esse comando?O comando `yarn add prisma -D` adiciona o Prisma como uma dependência de desenvolvimento ao projeto usando o gerenciador de pacotes Yarn. Isso é comum ao configurar o Prisma para tarefas de desenvolvimento, como migrações de banco de dados.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CONFIGURANDO O ARQUIVO (tsconfig): 
 
 {
@@ -50,12 +50,12 @@ CONFIGURANDO O ARQUIVO (tsconfig):
 
 Pra que serve o arquivo tsconfig?O arquivo `tsconfig.json` configura como o TypeScript é compilado para JavaScript em um projeto, controlando opções como diretório de saída, uso de mapas de origem e suporte a funcionalidades ECMAScript.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 INICIALIZANDO O PRISMA PARA CRIAÇÃO DA ESTRUTURA DO BANCO:
 
 Execute o comando: yarn prisma init Após a execução desse comando, uma pasta chamada "prisma" será criada no diretório da sua aplicação, contendo um arquivo chamado "schema.prisma". Esse arquivo é essencial para definir o modelo de dados e a configuração do banco de dados ao utilizar o Prisma.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CONFIGURANDO O ARQUIVO (schema.prisma):
 
 generator client {
@@ -81,13 +81,13 @@ O que é um model?Um modelo (model) em um contexto de desenvolvimento de softwar
 Após configurado, execute o comando: yarn prisma migrate dev
 Coloque um nome da migrate,  exemplo: create_productsDepois disso, provavelmente será adicionado um dependência chamada @prisma/client automaticamente.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CONFIGURANDO OS ARQUIVOS (.env.local e .env):Crie um arquivo chamado .env.local desta forma com a variável de ambiente vazia: DATABASE_STORAGE_PATH=''
 Após isso, duplique o arquivo e mude para o nome dele para .env e inclua o valor dentro da variável: DATABASE_STORAGE_PATH="file:./database.sqlite"
 
 Importante: O arquivo .env.local nao deve conter nenhum valor nas variáveis de ambiente pois  os mesmos será importado no repositório git.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CONFIGURANDO ARQUIVO (prismaClient.ts):// Crie a pasta database/  e depois crie o arquivo prismaClient.ts
 // Este arquivo contém a configuração centralizada com o banco de dados usando Prisma Client.
 
@@ -102,7 +102,7 @@ O que o prismaClient?
 // Ele ajuda a realizar tarefas comuns, como salvar ou buscar informações, de maneira fácil e organizada. Em vez de lidar diretamente com o SQLite, você usa o Prisma Client para tornar essas interações mais simples e menos complicadas, permitindo que você se concentre mais na construção da lógica da sua aplicação.
 // É como ter um amigo que cuida das conversas com o banco de dados para que você possa se concentrar em outras partes importantes do seu código.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CONFIGURANDO CONTROLLERS (CreateProductController.ts):
 
 Em src/ crie a pasta controllers / dentro dela crie o arquivo CreateProductController.ts 
@@ -142,7 +142,7 @@ A controller, portanto, é responsável por receber as entradas do usuário, pro
 
 Em resumo, a controller é um componente que manipula as solicitações do usuário, coordena a lógica de negócios e atualiza a interface do usuário, contribuindo para a separação de preocupações e a manutenção de um código mais organizado e modular.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CONFIGURANDO A ROTA:
 
 import { Router } from "express";
@@ -162,7 +162,7 @@ router.post("/product", createProduct.handle);
 // Exporta o router para ser usado em outros lugares da aplicação.
 export { router };
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 MODELO DO ARQUIVO CONFIGURADO (package.json):
 
 {
@@ -201,7 +201,7 @@ Observações sobre o scripts: ts-node-dev: é uma ferramenta que ajuda a desenv
 
 Portanto, quando você executa npm run dev, o ts-node-dev será acionado, carregará o pacote dotenv, e iniciará a execução do arquivo TypeScript ./src/server.ts. Esse script é especialmente útil durante o desenvolvimento, pois permite que você faça alterações no código e veja as atualizações refletidas automaticamente sem reiniciar manualmente o servidor.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CADASTRANDO UM PRODUTO COM PLUGIN (Rest Client): 
 
 Utilize o plugin do Rest Client para realizar requisições e cadastrar um produto da seguinte forma:Crie um arquivo chamado api.http na raiz do seu projeto que deve conter o script abaixo:### Create
@@ -214,12 +214,12 @@ Content-Type: application/json
   "price": 10.99
 }Importante: Mas oriento utilizar o (Insomnia ou Postman) pois algumas requisições apresentaram o erro 401.
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 UTILIZANDO O PRISMA STUDIO PARA VISUALIZAR O BANCO DE DADOS NO NAVEGADOR:
 
 Execute o comando: yarn prisma studio
 Importante: Sempre que for adicionada uma nova tabela, deverá reiniciar o serviço do Prisma Studio para refletir as atualizações. 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CRIANDO UMA TABELA DE RELACIONAMENTO NO PRISMA:
 
 Crie um arquivo dentro da pasta controllers chamado por exemplo: ProductCategoryController.ts e dentro deste arquivo deve conter:import { prismaClient } from "../database/prismaClient";
@@ -265,7 +265,7 @@ router.post("/productCategory", createProductCategory.handle);
 
 export { router };
 
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 CRIANDO UM PRODUTO COM CATEGORIA EXISTENTE JÁ ATRELADA:
 
 Crie um arquivo chamado na pasta controllers chamado CreateProductWithExistCategory.tsApós isso, cole o script abaixo:import { prismaClient } from "../database/prismaClient";
@@ -346,7 +346,7 @@ Após isso, acesso o Insomnia e coloque o post e coloque a URL: http://localhost
 	"id_category": "61f1f164-2f80-4925-bd30-ea54f1b88147"
 }
 ￼
-————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 GET DE PRODUTO COM CATEGORIA ASSOCIADA:
 
 Crie um arquivo FindProductController.ts com seguinte código:import { prismaClient } from "../database/prismaClient";
